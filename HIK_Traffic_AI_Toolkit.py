@@ -66,11 +66,16 @@ class TrafficSignAIToolkit:
             print(f"📊 Firmware size: {len(firmware_data):,} bytes")
             
             # Look for AI model signatures (based on previous analysis)
+            # Note: HIK firmware contains 4 API handlers: ISAPI, PSIA, HikCGI, Genetec
+            # HikCGI had known backdoor (CVE-2017-7921) - may affect binary structure
             ai_signatures = [
                 b'\x00\x00\x00\x00\x48\x49\x4B',  # HIK signature
                 b'\x89\x50\x4E\x47',              # PNG header
                 b'\xFF\xD8\xFF',                  # JPEG header
                 b'\x1F\x8B\x08',                  # GZIP header
+                b'HikCGI',                        # HikCGI protocol handler
+                b'ISAPI',                         # ISAPI handler
+                b'abcdefg',                       # HIK default encryption key
             ]
             
             model_start = None
