@@ -2,6 +2,23 @@
 
 🚗 **Extract, Test, and Rebuild HIK Vision dashcam firmware with traffic sign AI**
 
+## Compatible Camera Model
+
+**AE-DC5013-F6PRO - 1600P Dashcam with GPS**
+
+- Up to 1600P high resolution, gold wide angle up to 130°
+- F1.6 super large aperture offer a perfect night image  
+- Support built-in MIC and speaker for audio in and out
+- Built-in WIFI module and WIFI AP function supported
+- Built-in G-Sensor module, support video recording linkage at car crash or strong vibration (Linkage video record can be configured be no-overwritten)
+- Support GPS module with speed display and route tracking playback
+- Micro SD card for video recording, up to 256GB (Overwriting supported)
+- Phone App: live view, record playback and parameter configuration
+- Voice recognition supported: Snapshot, Recording on, Recording off
+- **ADAS supported**: "Traffic light turn green", "Speed limit recognition", "Front car start remind"
+- Easy installation and user friendly, plug and play (Automatically recording after power on)
+- Low power consumption and high performance
+
 ## Quick Start
 
 1. Place your `digicap.dav` firmware file in this directory
