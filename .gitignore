@@ -1,0 +1,26 @@
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code settings
+.vscode/
+
+# Firmware files (proprietary)
+digicap.dav
+*.dav
+ai_model/
+
+# Project output
+firmware_output/
+test_results/
+
+# Virtual environments
+.env
+.venv
+venv/
+env/
+
+# Temporary files
+*.tmp
+*.log
