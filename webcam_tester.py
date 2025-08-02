@@ -13,13 +13,13 @@ import sys
 from pathlib import Path
 
 class HeadlessTrafficDetector:
-    def __init__(self):
+    def __init__(self, model_path=None):
         """Initialize the HIK Vision traffic sign detector"""
         print("🚗 Headless HIK Vision Traffic Sign Detector")
         print("=" * 55)
         
         # Load the extracted HIK Vision AI model
-        self.model_path = "extracted_traffic_ai_model.bin"
+        self.model_path = model_path or "ai_model/traffic_signs.bin"
         self.model_data = self.load_hik_model()
         
         # Traffic sign classes (HIK Vision common signs)
@@ -287,7 +287,13 @@ def main():
     print("Extracted from dashcam firmware - Testing locally")
     print()
     
-    detector = HeadlessTrafficDetector()
+    # Get model path from command line argument if provided
+    model_path = None
+    if len(sys.argv) > 1:
+        model_path = sys.argv[1]
+        print(f"📁 Using AI model: {model_path}")
+    
+    detector = HeadlessTrafficDetector(model_path)
     
     # Ask user for frame limit (default to 200 for quick test)
     try:

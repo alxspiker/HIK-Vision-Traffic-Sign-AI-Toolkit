@@ -10,6 +10,8 @@ __pycache__/
 digicap.dav
 *.dav
 ai_model/
+*.bin
+traffic_signs.*
 
 # Project output
 firmware_output/

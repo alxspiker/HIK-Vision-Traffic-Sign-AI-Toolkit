@@ -145,20 +145,15 @@ class TrafficSignAIToolkit:
             print("❌ AI model not found! Run extraction first.")
             return False
         
-        # Create symbolic link for detector
-        detector_model_link = self.base_dir / "extracted_traffic_ai_model.bin"
-        if not detector_model_link.exists():
-            detector_model_link.symlink_to(self.ai_model_file.resolve())
-        
         print("🚗 Starting traffic sign detection...")
         print("📺 This will use your webcam to test the extracted AI model")
         print("🛑 Press Ctrl+C to stop detection and continue")
         print()
         
         try:
-            # Run the headless detector
+            # Run the headless detector with the AI model path as argument
             result = subprocess.run([
-                sys.executable, "webcam_tester.py"
+                sys.executable, "webcam_tester.py", str(self.ai_model_file)
             ], cwd=self.base_dir, timeout=None)
             
             if result.returncode == 0:
@@ -266,14 +261,8 @@ class TrafficSignAIToolkit:
     
     def cleanup_temp_files(self):
         """Clean up temporary files"""
-        temp_files = [
-            "extracted_traffic_ai_model.bin",  # Symlink
-        ]
-        
-        for temp_file in temp_files:
-            temp_path = self.base_dir / temp_file
-            if temp_path.is_symlink():
-                temp_path.unlink()
+        # No longer needed since we removed the symbolic link approach
+        pass
     
     def run_complete_pipeline(self):
         """Run the complete AI extraction, testing, and rebuilding pipeline"""

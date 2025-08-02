@@ -1,0 +1,21 @@
+# HIK Vision Traffic Sign AI Toolkit
+# Requirements for firmware analysis and AI model testing
+
+# Computer Vision and Image Processing
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# System and File Operations
+pathlib2>=2.3.7; python_version < '3.4'
+
+# Optional: Enhanced image processing (if needed)
+Pillow>=10.0.0
+
+# Optional: Scientific computing for advanced analysis
+scipy>=1.11.0
+
+# Optional: Matplotlib for visualization (if GUI features are added)
+matplotlib>=3.7.0
+
+# Development and Testing (optional)
+pytest>=7.4.0
